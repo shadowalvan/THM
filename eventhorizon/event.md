@@ -6,4 +6,11 @@ tom.dom@eventhorizon.thm:password dom.mark@eventhorizon.thm
 <img width="1275" height="797" alt="image" src="https://github.com/user-attachments/assets/86f88982-cf9f-4a81-9389-3a5c078a3c25" />
 <img width="1093" height="771" alt="image" src="https://github.com/user-attachments/assets/ebc13801-1254-48ca-8471-907fa6cdc7b6" />
 
+script.py reads the powershell file, extracts base64 blob, decodes it from base64, decompresses it(deflate), saves the raw .NET assembly(DLL/EXE) to disk so it can be inspected
+virustotal.com
+
+<img width="805" height="142" alt="image" src="https://github.com/user-attachments/assets/a1bcb22e-a1e4-490d-a4fe-4ac29d3b324e" />
+
+<img width="1740" height="745" alt="image" src="https://github.com/user-attachments/assets/fb535389-1f0c-40a3-9277-66074731ce18" />
+
 
