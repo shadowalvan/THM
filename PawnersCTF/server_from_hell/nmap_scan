@@ -1,0 +1,475 @@
+                                                                                                                                                                                                                                           
+┌──(alvan㉿vbox)-[~/THM/ctf]
+└─$ nmap -sC -sV -Pn 10.10.151.140 -p1337
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 19:06 UTC
+Nmap scan report for 10.10.151.140
+Host is up (0.78s latency).
+
+PORT     STATE SERVICE VERSION
+1337/tcp open  waste?
+| fingerprint-strings: 
+|   NULL: 
+|     Welcome traveller, to the beginning of your journey
+|     begin, find the trollface
+|     Legend says he's hiding in the first 100 ports
+|_    printing the banners from the ports
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port1337-TCP:V=7.95%I=7%D=9/1%Time=68B5EEAB%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,A7,"Welcome\x20traveller,\x20to\x20the\x20beginning\x20of\x20your\x20
+SF:journey\nTo\x20begin,\x20find\x20the\x20trollface\nLegend\x20says\x20he
+SF:'s\x20hiding\x20in\x20the\x20first\x20100\x20ports\nTry\x20printing\x20
+SF:the\x20banners\x20from\x20the\x20ports");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 72.98 seconds
+                                                                                                                                                                                                                                            
+┌──(alvan㉿vbox)-[~/THM/ctf]
+└─$ nmap -sC -sV -Pn 10.10.151.140 -p1-100
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-01 19:08 UTC
+Nmap scan report for 10.10.151.140
+Host is up (0.74s latency).
+
+PORT    STATE SERVICE      VERSION
+1/tcp   open  tcpmux?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+2/tcp   open  compressnet?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+3/tcp   open  compressnet?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+4/tcp   open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+5/tcp   open  rje?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+6/tcp   open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffffffffffffffffffffffffffffffffffffffffffffffff00
+7/tcp   open  echo?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffffff777778887777777777cffffffffffffffffffff00
+8/tcp   open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffff8000000000000000008888887cfcfffffffffffff00
+9/tcp   open  discard?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffffff80000088808000000888800000008887ffffffffff00
+10/tcp  open  unknown
+| fingerprint-strings: 
+|   JavaRMI, NULL: 
+|_    550 12345 0fffffffff70000088800888800088888800008800007ffffffff00
+11/tcp  open  systat?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffff000088808880000000000000088800000008fffffff00
+12/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffff80008808880000000880000008880088800008ffffff00
+13/tcp  open  daytime?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffff000000888000000000800000080000008800007fffff00
+14/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffff8000000000008888000000000080000000000007fffff00
+15/tcp  open  netstat?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffff70000000008cffffffc0000000080000000000008fffff00
+16/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffff8000000008ffffff007f8000000007cf7c80000007ffff00
+17/tcp  open  qotd?
+| fingerprint-strings: 
+|   JavaRMI, NULL: 
+|_    550 12345 0fffff7880000780f7cffff7800f8000008fffffff80808807fff00
+18/tcp  open  msp?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fff78000878000077800887fc8f80007fffc7778800000880cff00
+19/tcp  open  chargen?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ff70008fc77f7000000f80008f8000007f0000000000000888ff00
+20/tcp  open  ftp-data?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ff0008f00008ffc787f70000000000008f000000087fff8088cf00
+21/tcp  open  ftp?
+|_ftp-syst: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+|_tls-alpn: ERROR: Script execution failed (use -d to debug)
+|_ftp-anon: ERROR: Script execution failed (use -d to debug)
+| fingerprint-strings: 
+|   LDAPSearchReq, NULL: 
+|_    550 12345 0f7000f800770008777 go to port 12345 80008f7f700880cf00
+|_sslv2: ERROR: Script execution failed (use -d to debug)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+|_ftp-bounce: ERROR: Script execution failed (use -d to debug)
+|_tls-nextprotoneg: ERROR: Script execution failed (use -d to debug)
+22/tcp  open  ssh?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0f8008c008fff8000000000000780000007f800087708000800ff00
+23/tcp  open  telnet?
+| fingerprint-strings: 
+|   NULL, SMBProgNeg: 
+|_    550 12345 0f8008707ff07ff8000008088ff800000000f7000000f800808ff00
+24/tcp  open  priv-mail?
+| fingerprint-strings: 
+|   NULL, X11Probe: 
+|_    550 12345 0f7000f888f8007ff7800000770877800000cf780000ff00807ff00
+25/tcp  open  smtp?
+| fingerprint-strings: 
+|   FourOhFourRequest, NULL: 
+|_    550 12345 0ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00
+|_smtp-commands: SMTP EHLO nmap.scanme.org: failed to receive data: connection closed
+26/tcp  open  rsftp?
+| fingerprint-strings: 
+|   FourOhFourRequest, NULL: 
+|_    550 12345 0ff70800008ff800f007fff70880000087f70000007fcf7007fff00
+27/tcp  open  nsw-fe?
+| fingerprint-strings: 
+|   NULL, SMBProgNeg: 
+|_    550 12345 0fff70000007fffcf700008ffc778000078000087ff87f700ffff00
+28/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffc000000f80fff700007787cfffc7787fffff0788f708ffff00
+29/tcp  open  msg-icp?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffff7000008f00fffff78f800008f887ff880770778f708ffff00
+30/tcp  open  unknown
+| fingerprint-strings: 
+|   LPDString, NULL: 
+|_    550 12345 0ffffff8000007f0780cffff700000c000870008f07fff707ffff00
+31/tcp  open  msg-auth?
+| fingerprint-strings: 
+|   FourOhFourRequest, NULL: 
+|_    550 12345 0ffffcf7000000cfc00008fffff777f7777f777fffffff707ffff00
+32/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL, X11Probe: 
+|_    550 12345 0cccccff0000000ff000008c8cffffffffffffffffffff807ffff00
+33/tcp  open  dsp?
+| fingerprint-strings: 
+|   NULL, SMBProgNeg: 
+|_    550 12345 0fffffff70000000ff8000c700087fffffffffffffffcf808ffff00
+34/tcp  open  unknown
+| fingerprint-strings: 
+|   Kerberos, NULL: 
+|_    550 12345 0ffffffff800000007f708f000000c0888ff78f78f777c008ffff00
+35/tcp  open  priv-print?
+| fingerprint-strings: 
+|   FourOhFourRequest, NULL: 
+|_    550 12345 0fffffffff800000008fff7000008f0000f808f0870cf7008ffff00
+36/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffffff7088808008fff80008f0008c00770f78ff0008ffff00
+37/tcp  open  time?
+| fingerprint-strings: 
+|   Kerberos, NULL: 
+|_    550 12345 0fffffffffffc8088888008cffffff7887f87ffffff800000ffff00
+38/tcp  open  rap?
+| fingerprint-strings: 
+|   NULL, X11Probe: 
+|_    550 12345 0fffffffffffff7088888800008777ccf77fc777800000000ffff00
+39/tcp  open  rlp?
+| fingerprint-strings: 
+|   NULL, SSLSessionReq: 
+|_    550 12345 0fffffffffffffff800888880000000000000000000800800cfff00
+40/tcp  open  unknown
+| fingerprint-strings: 
+|   Help, NULL: 
+|_    550 12345 0fffffffffffffffff70008878800000000000008878008007fff00
+41/tcp  open  graphics?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffffffffffff700008888800000000088000080007fff00
+42/tcp  open  nameserver?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffffffffffffffc800000000000000000088800007fff00
+43/tcp  open  whois?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffffffffffffffff7800000000000008888000008ffff00
+44/tcp  open  mpm-flags?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0fffffffffffffffffffffffff7878000000000000000000cffff00
+45/tcp  open  mpm?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffffffffffffffffffffffffffc880000000000008ffffff00
+46/tcp  open  mpm-snd?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0ffffffffffffffffffffffffffffffffff7788888887ffffffff00
+47/tcp  open  ni-ftp?
+| fingerprint-strings: 
+|   NULL, oracle-tns: 
+|_    550 12345 0ffffffffffffffffffffffffffffffffffffffffffffffffffff00
+48/tcp  open  auditd?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+49/tcp  open  tacacs?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+50/tcp  open  re-mail-ck?
+| fingerprint-strings: 
+|   NULL: 
+|_    550 12345 0000000000000000000000000000000000000000000000000000000
+51/tcp  open  ftp          Novell NetWare ftpd v2728
+52/tcp  open  xns-time?
+| fingerprint-strings: 
+|   NULL: 
+|     HTTP/1.1 302 Found
+|     hServer: Vernier/133921414
+|_    oLocation: https://0887:447/
+53/tcp  open  http         Panasonic sPodQqMML webcam http config
+|_dns-nsid: ERROR: Script execution failed (use -d to debug)
+54/tcp  open  smtp         qpsmtpd
+|_smtp-commands: SMTP EHLO nmap.scanme.org: failed to receive data: connection closed
+55/tcp  open  imap         Mirapoint imapd icEbp
+|_imap-capabilities: CAPABILITY
+56/tcp  open  xns-auth?
+| fingerprint-strings: 
+|   NULL, oracle-tns: 
+|     HTTP/1.1 200 OK
+|     pServer: KM_HTTP-Server/3078325
+|_    g<title>Kyocera Command Center</title>
+57/tcp  open  priv-term?
+| fingerprint-strings: 
+|   NULL: 
+|     HTTP/1.0 200 OK
+|     Pragma:no-cache
+|     Content-Length: 1r
+|     Content-Type: text/html
+|     <html>
+|     <head>
+|_    <title>AXIS 676215432; IP address: 16826</title>
+58/tcp  open  xns-mail?
+| fingerprint-strings: 
+|   NULL: 
+|     0000000000000000000
+|     |0000
+|_    0000000000000000000
+59/tcp  open  http         Linksys WAP11 http config
+|_http-title: Site doesn't have a title (text/html).
+60/tcp  open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    220 [?wZmqZoXD]? Microsoft ESMTP MAIL Service, Version: IPbdwdmrx ready
+61/tcp  open  http         Google Mini search appliance httpd
+|_http-title: Site doesn't have a title (text/html).
+62/tcp  open  smtp-proxy   EdgeWave MAG3000 Email Filtering appliance smtp proxy
+63/tcp  open  http         Hay Systems HSL 2.75G Femtocell http config
+|_http-title: Welcome to INTEGRITY
+|_http-server-header: Integrity
+64/tcp  open  ident        FreeBSD identd
+65/tcp  open  tacacs-ds?
+| fingerprint-strings: 
+|   NULL: 
+|     HTTP/1.1 832 a
+|     Content-Length: 6r
+|     Pragma: no-cache
+|     Expires: 0
+|     Connection: close
+|     Content-Type: text/html
+|     <HTML>
+|     <HEAD><TITLE>
+|     SMART - SMART Bridgit - Download Conferencing Software
+|_    </TITLE>
+66/tcp  open  pop3         Classic Hamster pop3d (Permission denied)
+67/tcp  open  dhcps?
+| fingerprint-strings: 
+|   Help, NULL: 
+|     match http m%^HTTP/1.0 200 OK
+|     b<title>?:Livebox|HNM</title>
+|     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+|     <meta http-equiv="Content-language" content="fr">
+|     <meta name="author" content="Nicolas VIVIEN">
+|_    <meta name="Copyright" content="SAGEM COMMUNICATIONS">%s p/Sagem Livebox WAP http config/ d/WAP/
+68/tcp  open  dhcpc?
+| fingerprint-strings: 
+|   NULL: 
+|     HTTP/1.1 -1 Bad Request
+|     Date: c 3w2049 911PST
+|     Server: TargetWeb/RzJqSnL_ (TargetOS)
+|_    Connection: close
+69/tcp  open  http         SAP Internet DB httpd 3
+|_http-title: Site doesn't have a title.
+|_http-server-header: SAP-Internet-SapDb-Server/3
+70/tcp  open  gopher?
+|_gopher-ls: 
+| fingerprint-strings: 
+|   NULL: 
+|_    obby_welcome:4nnet6_encryption:3n
+71/tcp  open  telnet       CyberSwitching Dualcom power device rabbit 2000 embedded telnetd
+72/tcp  open  netrjs-2?
+| fingerprint-strings: 
+|   NULL: 
+|_    0000000000000
+73/tcp  open  http         Everfocus webcam http config
+|_http-server-header: http server/everfocus
+74/tcp  open  http         Dune httpd 636724
+|_http-title: Site doesn't have a title.
+|_http-server-header: Dune/636724
+75/tcp  open  smtp
+| fingerprint-strings: 
+|   NULL: 
+|_    220 SMTP-Server Classic Hamster ?:Vr.|Version 48398507 (Build 318132282)
+|_smtp-commands: SMTP EHLO nmap.scanme.org: failed to receive data: connection closed
+76/tcp  open  telnet
+| fingerprint-strings: 
+|   NULL: 
+|     0QEMU ehFbQ monitor - type 'help' for more information
+|_    (qemu)
+77/tcp  open  priv-rje?
+| fingerprint-strings: 
+|   JavaRMI, NULL, afp: 
+|     HTTP/1.1 401 Unauthorized
+|     WWW-Authenticate: Basic realm="View Home & Status Web Pages"
+|_    mServer: Allegro-Software-RomPager/wwG
+78/tcp  open  http         Konica Minolta PageScope Web Connection httpd
+|_http-title: Site doesn't have a title (text/html).
+79/tcp  open  ftp          OpenVMS Secure/IP ftpd rCwPUDNz
+80/tcp  open  http?
+81/tcp  open  textui       TeamSpeak 3 ServerQuery
+82/tcp  open  xfer?
+| fingerprint-strings: 
+|   JavaRMI, NULL: 
+|     000@TransBase Multiplexer error report:
+|_    Illegal request
+83/tcp  open  mit-ml-dev?
+| fingerprint-strings: 
+|   NULL: 
+|     [1;1fATOS Telnet Server
+|     CTRL+d to exit
+|     Init Command Line Interface.. 
+|     Boot Version: 4
+|     Boot Date: /34 46/1
+|     ATOS Version: 9906 (
+|     ATOS Date: 7:449 5/
+|     Hardware: jr
+|     Product Code : 8r
+|     Serial Number : 3r
+|     LAN0 MAC Address : D:CDD99
+|     ADSL Modem SW version: YJTZ *
+|     ADSL Modem API version: 3r
+|     ADSL Driver version: G
+|     release: Mlx_xhDsl+
+|     encryption not supported
+|     Vinetic fw version : mG_VCD
+|_    User name :
+84/tcp  open  imap         Binc imapd
+|_imap-capabilities: CAPABILITY
+85/tcp  open  telnet       Apache Felix remote console
+86/tcp  open  ftp          OpenFTPD
+87/tcp  open  donkey       MLDonkey multi-network P2P GUI port
+88/tcp  open  http         Octoshape P2P streaming web service
+|_http-title: Site doesn't have a title.
+89/tcp  open  su-mit-tg?
+| fingerprint-strings: 
+|   LANDesk-RC, NCP, NULL: 
+|     HTTP/1.0 551 n
+|     Content-Type: text/html
+|_    q<TITLE>Lexmark Optra SC g/TITLE>
+90/tcp  open  http         Panasonic ZMrh webcam http config
+91/tcp  open  mit-dov?
+92/tcp  open  http         Openwbem CIMOM httpd ZBEZoOx
+|_http-server-header: openwbem/ZBEZoOx (CIMOM)
+|_http-title: Site doesn't have a title.
+93/tcp  open  http-proxy   Astaro Security http proxy
+|_http-title: Site doesn't have a title.
+94/tcp  open  nagios-nsca  Nagios NSCA
+95/tcp  open  http         QNAP TS-219, TS-239, or TS-509 NAS http config VhYt
+|_http-server-header: http server VhYt
+96/tcp  open  dixie?
+| fingerprint-strings: 
+|   NULL, NotesRPC: 
+|     +Network Services Processor *
+|     Version ZvDFtn *
+|_    (Estech Systems, Inc.)
+97/tcp  open  http         Cherokee httpd e
+|_http-server-header: Cherokee/e
+|_http-title: Site doesn't have a title.
+98/tcp  open  linuxconf?
+| fingerprint-strings: 
+|   NULL, WMSRequest: 
+|     HTTP/1.1 404 Not Found
+|     rExpires: Thu, 01-Jan-1970 00:00:00 GMT
+|_    l<title>VMware vCloud Director</title>
+99/tcp  open  metagram?
+| fingerprint-strings: 
+|   NULL: 
+|_    You are not welcome to use pfrom sONkgfF.
+100/tcp open  newacct?
+| fingerprint-strings: 
+|   LANDesk-RC, NULL: 
+|     HTTP/1.1 200 OK
+|     CACHE-CONTROL: no-cache
+|     j<META name="author" content="J.Huber, R.Kunz">
+|_    <TITLE>Speedport W tKonfigurationsprogramm</TITLE>
+9 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1-TCP:V=7.95%I=7%D=9/1%Time=68B5EF47%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200000000000000000000000000000000000000000000000000000
+SF:000");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2-TCP:V=7.95%I=7%D=9/1%Time=68B5EF47%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200000000000000000000000000000000000000000000000000000
+SF:000");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3-TCP:V=7.95%I=7%D=9/1%Time=68B5EF47%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200000000000000000000000000000000000000000000000000000
+SF:000");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port4-TCP:V=7.95%I=7%D=9/1%Time=68B5EF46%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200000000000000000000000000000000000000000000000000000
+SF:000");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5-TCP:V=7.95%I=7%D=9/1%Time=68B5EF46%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200000000000000000000000000000000000000000000000000000
+SF:000");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port6-TCP:V=7.95%I=7%D=9/1%Time=68B5EF46%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200fffffffffffffffffffffffffffffffffffffffffffffffffff
+SF:f00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port7-TCP:V=7.95%I=7%D=9/1%Time=68B5EF47%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200fffffffffffff777778887777777777cfffffffffffffffffff
+SF:f00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8-TCP:V=7.95%I=7%D=9/1%Time=68B5EF46%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200fffffffffff8000000000000000008888887cfcffffffffffff
+SF:f00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9-TCP:V=7.95%I=7%D=9/1%Time=68B5EF47%P=x86_64-pc-linux-gnu%r(NULL,4
+SF:1,"550\x2012345\x200ffffffffff80000088808000000888800000008887fffffffff
+SF:f00");
+Service Info: Hosts: l-B, LJjVIuSA, _A; OSs: NetWare, FreeBSD, Windows, OpenVMS; Devices: webcam, router, proxy server, WAP, power-device; CPE: cpe:/o:novell:netware, cpe:/h:panasonic:spodqqmml, cpe:/h:linksys:wap11, cpe:/o:hay_systems:hsl_2.75g_femtocell, cpe:/o:freebsd:freebsd
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 600.21 seconds
+                                                               
